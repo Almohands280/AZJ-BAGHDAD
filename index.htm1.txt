@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة أزج بغداد للتجارة والمقاوﻻت العامة والخدمات النفطية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    header {
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ffd700, #ff8c00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s;
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+    }
+
+    .hero {
+        margin-top: 80px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    .hero-content {
+        max-width: 900px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+        font-size: 22px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        animation: fadeInUp 1s;
+        opacity: 0.9;
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 15px 40px;
+        background: linear-gradient(45deg, #ffd700, #ff8c00);
+        color: #000;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.3s;
+        box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+    }
+
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+
+    h2 {
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 60px;
+        background: linear-gradient(45deg, #ffd700, #ff8c00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .service-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        transition: all 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+    }
+
+    .service-icon {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        color: #ffd700;
+    }
+
+    .service-card p {
+        line-height: 1.8;
+        opacity: 0.9;
+    }
+
+    .values {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        padding: 50px;
+        margin: 40px 0;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .value-item {
+        text-align: center;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        transition: all 0.3s;
+    }
+
+    .value-item:hover {
+        background: rgba(255, 215, 0, 0.1);
+        transform: scale(1.05);
+    }
+
+    .value-item h4 {
+        color: #ffd700;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .contact {
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        padding: 60px;
+        text-align: center;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .contact-item {
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+    }
+
+    .contact-item i {
+        font-size: 40px;
+        color: #ffd700;
+        margin-bottom: 15px;
+    }
+
+    .contact-item h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ffd700;
+    }
+
+    .contact-item p {
+        line-height: 1.8;
+    }
+
+    .contact-item a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+        color: #ffd700;
+    }
+
+    footer {
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 30px;
+        margin-top: 80px;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 30px;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 15px;
+        border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .stat-number {
+        font-size: 48px;
+        font-weight: bold;
+        color: #ffd700;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 32px; }
+        .hero p { font-size: 18px; }
+        h2 { font-size: 32px; }
+        .nav-links { display: none; }
+    }
+</style>
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">أزج بغداد</div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#values">قيمنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>شركة أزج بغداد</h1>
+        <p>للتجارة والمقاوﻻت العامة والخدمات النفطية المحدودة</p>
+        <p style="font-size: 20px; margin-top: 20px;">شريكك الموثوق في بناء المستقبل</p>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">2025</div>
+                <div>سنة التأسيس</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">الخامسة</div>
+                <div>الدرجة التعاقدية</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div>قطاعات رئيسية</div>
+            </div>
+        </div>
+        <a href="#contact" class="cta-button">تواصل معنا</a>
+    </div>
+</section>
+
+<section id="services">
+    <h2>خدماتنا المتميزة</h2>
+    <div class="services">
+        <div class="service-card">
+            <div class="service-icon">🏗</div>
+            <h3>المقاوﻻت العامة</h3>
+            <p>تنفيذ مشاريع البنية التحتية والأعمال المدنية والمعمارية بأعلى معايير الجودة. نقدم خدمات متكاملة في إنشاء وترميم الأبنية والجسور، شبكات المياه والصرف الصحي، وأعمال MEP الكهربائية والميكانيكية.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📦</div>
+            <h3>التجارة العامة</h3>
+            <p>توريد شامل للمواد الإنشائية والكهربائية والميكانيكية. نوفر جميع مستلزمات المشاريع من مواد البناء، الأثاث، التجهيزات الداخلية، والأنابيب بجودة عالية وتسليم في الوقت المحدد.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">⚙</div>
+            <h3>الخدمات النفطية</h3>
+            <p>دعم متخصص لقطاع النفط والغاز في العراق. نقدم خدمات إنشاء وربط خطوط الأنابيب، تشغيل وصيانة المنشآت النفطية، توريد المعدات والمواد النفطية، والدعم الفني واللوجستي للشركات الوطنية والدولية.</p>
+        </div>
+    </div>
+</section>
+
+<section class="values" id="values">
+    <h2>قيمنا الأساسية</h2>
+    <div class="values-grid">
+        <div class="value-item">
+            <h4>🎯 الطموح</h4>
+            <p>نسعى باستمرار نحو النمو والتميز في كل ما نقوم به</p>
+        </div>
+        <div class="value-item">
+            <h4>💼 الاحترافية</h4>
+            <p>نمارس أعمالنا بأعلى درجات الخبرة والمسؤولية</p>
+        </div>
+        <div class="value-item">
+            <h4>💡 الابتكار</h4>
+            <p>نعتمد الإبداع لتقديم حلول عصرية متطورة</p>
+        </div>
+        <div class="value-item">
+            <h4>⭐ الجودة</h4>
+            <p>نلتزم بتقديم نتائج متفوقة تتجاوز التوقعات</p>
+        </div>
+        <div class="value-item">
+            <h4>🌱 الاستدامة</h4>
+            <p>نحرص على التوازن البيئي والاجتماعي طويل المدى</p>
+        </div>
+        <div class="value-item">
+            <h4>🤝 الثقة</h4>
+            <p>نبني شراكات مستدامة قائمة على الشفافية والموثوقية</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>تواصل معنا</h2>
+    <p style="font-size: 20px; margin-bottom: 40px;">نحن هنا لخدمتك والإجابة على استفساراتك</p>
+    <div class="contact-info">
+        <div class="contact-item">
+            <h4>📍 العنوان</h4>
+            <p>بغداد - الكرادة<br>جمهورية العراق</p>
+        </div>
+        <div class="contact-item">
+            <h4>📞 الهاتف</h4>
+            <p>
+                <a href="tel:+9647730182900">07730182900</a><br>
+                <a href="tel:+9647809182900">07809182900</a>
+            </p>
+        </div>
+        <div class="contact-item">
+            <h4>✉ البريد الإلكتروني</h4>
+            <p><a href="mailto:h.almohands@gmail.com">h.almohands@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+            <h4>🏢 التسجيل</h4>
+            <p>رقم التسجيل: 11005<br>شركة ذ.م.م</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 شركة أزج بغداد للتجارة والمقاوﻻت العامة والخدمات النفطية المحدودة</p>
+    <p style="margin-top: 10px; opacity: 0.8;">جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.service-card, .value-item, .contact-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+</script>
+
+
+</body>
+</html>
